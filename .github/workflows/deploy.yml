@@ -1,14 +1,9 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    paths:
-      - 'Cargo.toml'
-      - 'src/**'
-      - 'index.html'
-    branches:
-      - main
-  
+  workflow_run:
+    workflows: ["Rust Checks"]
+    types: [completed]
 
 
 permissions:
