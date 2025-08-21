@@ -2,8 +2,14 @@ name: Deploy to GitHub Pages
 
 on:
   push:
+    paths:
+      - 'Cargo.toml'
+      - 'src/**'
+      - 'index.html'
     branches:
       - main
+  
+
 
 permissions:
   contents: read
