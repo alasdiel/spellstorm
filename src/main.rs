@@ -12,7 +12,7 @@ fn main() {
                 }),
                 ..default()
             })
-            .build()
+            .build(),
     );
     app.add_systems(Startup, || {
         // Setup your game here
