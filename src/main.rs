@@ -1,4 +1,5 @@
 use bevy::prelude::*;
+
 fn main() {
     let mut app = App::new();
     app.add_plugins(
@@ -14,8 +15,29 @@ fn main() {
             })
             .build(),
     );
-    app.add_systems(Startup, || {
-        // Setup your game here
-    });
+    app.add_systems(Startup, camera_system);
+    app.add_systems(Startup, circle_mesh);
     app.run();
+}
+
+// GAME SYSTEMS
+// TODO: make modules
+fn camera_system(
+    mut commands: Commands,
+){
+    commands.spawn(Camera2d);    
+    }
+
+fn circle_mesh(
+    mut commands: Commands,
+    mut meshes: ResMut<Assets<Mesh>>,
+    mut materials: ResMut<Assets<ColorMaterial>>,
+){
+    let circle = meshes.add(Circle::new(50.0));
+    let color = Color::hsl(0., 0.95, 0.7);
+
+    commands.spawn((
+        Mesh2d(circle),
+        MeshMaterial2d(materials.add(color))
+    ));
 }
