@@ -1,0 +1,1 @@
+dev page (webassembly): https://alasdiel.github.io/spellstorm
