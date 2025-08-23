@@ -27,7 +27,7 @@ jobs:
         run: cargo install trunk wasm-bindgen-cli
       
       - name: Build wasm app
-        run: trunk build --release
+        run: trunk build --release --public-url /spellstorm/
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
