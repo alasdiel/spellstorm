@@ -8,7 +8,7 @@ fn main() {
             .set(WindowPlugin {
                 primary_window: Some(Window {
                     title: "Spellstorm".into(),
-                    resizable: false, //change maybe
+                    resizable: true, //change maybe
                     ..default()
                 }),
                 ..default()
