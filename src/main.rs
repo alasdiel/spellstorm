@@ -7,8 +7,9 @@ fn main() {
             .set(ImagePlugin::default_nearest())
             .set(WindowPlugin {
                 primary_window: Some(Window {
+                    resolution: (0.0, 0.0).into(),
                     title: "Spellstorm".into(),
-                    resizable: true, //change maybe
+                    resizable: false, //keep to false, wasm incompatability
                     ..default()
                 }),
                 ..default()
