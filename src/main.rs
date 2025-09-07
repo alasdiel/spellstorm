@@ -1,5 +1,4 @@
 use bevy::prelude::*;
-
 fn main() {
     let mut app = App::new();
     app.add_plugins(
@@ -7,7 +6,6 @@ fn main() {
             .set(ImagePlugin::default_nearest())
             .set(WindowPlugin {
                 primary_window: Some(Window {
-                    resolution: (0.0, 0.0).into(),
                     title: "Spellstorm".into(),
                     resizable: false, //keep to false, wasm incompatability
                     ..default()
